@@ -1,0 +1,171 @@
+*{
+    box-sizing: border-box;
+    font-family:Lexend Deca;
+}
+
+html {
+    background-color: hsl(0, 0%, 95%);
+}
+
+body{
+    width:100vw;
+    max-width: 1440px;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* ----------- C A R D ------------ */
+/* ---- S T A R T S   H E R E ----- */
+
+.card{
+    display:flex;
+    align-items:center;
+    background-color:transparent;
+    height:470px;
+    border-radius:0.5em;
+    box-shadow:0 0 5px 2px lightgray;
+}
+
+.section {
+    height:100%;
+    width:calc(200px + 5em);
+    padding:2.5em 2.5em;
+
+    display:flex;
+    flex-direction:column;
+}
+        /* ----- A D J U S T    S E C T I O N    C O L O R S
+          -------  &   B O R D E R - R A D I U S ----- */
+
+        .section.sedan {
+            background-color:hsl(31, 77%, 52%);
+            border-radius:0.5em 0 0 0.5em;
+        }
+
+        .section.SUV {
+            background-color:hsl(184, 100%, 22%);
+        }
+
+        .section.luxury {
+            background-color:hsl(179, 100%, 13%);
+            border-radius: 0 0.5em 0.5em 0;
+        }
+
+
+.car-logo{
+    height:32px;
+    width:fit-content;
+}
+
+.car-class{
+    font-family:Big Shoulders Display;
+    color:hsl(0, 0%, 95%);
+}
+
+.car-description {
+    font-size:14px;
+    font-weight:300;    
+    line-height:1.7em;
+    width:95%;
+    color:hsla(0, 0%, 100%, 0.75);
+    
+}
+
+button {
+    margin-top:auto;
+    min-height:45px;
+    width:70%;
+    
+    background-color:hsl(0, 0%, 95%);
+    border:2px solid hsl(0, 0%, 95%);
+    border-radius:100px;
+}
+    /* ----- DIFFERENT COLORS ----- */
+    /* ----- FOR EACH BUTTON ----- */
+
+        button.sedan {color:hsl(31, 77%, 52%);}
+        button.SUV {color:hsl(184, 100%, 22%);}
+        button.luxury {color:hsl(179, 100%, 13%);}
+
+button:hover {
+    cursor:pointer;
+    background-color:transparent;
+    color:hsl(0, 0%, 95%);
+    transition-duration: 0.3s;
+}
+
+/* ---------- A N I M A T I O N S ------------- */
+/* ---------- A N I M A T I O N S ------------- */
+
+@keyframes fade-in {
+    0% {
+        opacity:0%
+    }
+
+    100%{
+        opacity:100%
+    }
+}
+
+    .card {
+        animation-name:fade-in;
+        animation-iteration-count: 1;
+        animation-duration:1s;
+    }
+
+@keyframes movement {
+    0%{
+        transform:translateX(-10px)
+    }
+
+    100%{
+        transform:translateX(0)
+    }
+
+}
+
+    .car-logo {
+        animation:movement;
+        animation-duration:1.5s;
+    }
+
+/* --------- M O B I L E     D I S P L A Y --------- */
+/* ------------ S T A R T S   H E R E-------------- */
+
+@MEDIA(max-width:375px){
+
+   
+body{
+        max-width: 375PX;
+        height:min-content;
+        padding:5em;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+}
+    
+    /* ----------- C A R D ------------ */
+    /* ---- S T A R T S   H E R E ----- */
+    
+.card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background-color:transparent;
+    height:1250px;
+}
+
+
+.section.sedan {
+    border-radius:0.5em  0.5em 0 0;
+}
+
+.section.luxury {
+    border-radius:0 0 0.5em 0.5em;
+}
+
+
+}
